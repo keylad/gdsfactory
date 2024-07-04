@@ -3,7 +3,7 @@
 ## Project chosen
 
 Name: gdsfactory\
-URL: https://github.com/gdsfactory/gdsfactory \
+URL: https://github.com/gdsfactory/gdsfactory\
 Number of lines of code and the tool used to count it:  45356, lizard\
 Programming language: Python
 
