@@ -27,7 +27,7 @@ coverage html
 
 
 As the coverage report is long, I only included the overall coverage result as well as the coverage result of the files that contain the functions for which I will improve the branch coverage.
-[coverage pictures]([https://github.com/keylad/gdsfactory/tree/main/pictures/coverage](https://github.com/keylad/gdsfactory/blob/main/pictures/coverage/old/Screenshot%202024-07-03%20at%2018.49.22.png))
+![coverage pictures](https://github.com/keylad/gdsfactory/blob/main/pictures/coverage/old/Screenshot%202024-07-03%20at%2018.49.22.png)
 [coverage pictures](https://github.com/keylad/gdsfactory/blob/main/pictures/coverage/old/Screenshot%202024-07-03%20at%2018.50.05.png)
 [coverage pictures](https://github.com/keylad/gdsfactory/blob/main/pictures/coverage/old/Screenshot%202024-07-03%20at%2018.50.14.png)
 
