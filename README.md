@@ -75,5 +75,5 @@ These are the old coverage results:
 
 ![coverage](https://github.com/keylad/gdsfactory/blob/main/pictures/coverage/new/Screenshot%202024-07-03%20at%2018.50.50.png)
 ![coverage](https://github.com/keylad/gdsfactory/blob/main/pictures/coverage/new/Screenshot%202024-07-03%20at%2018.51.55.png)
-![coverage](https://github.com/keylad/gdsfactory/blob/main/pictures/coverage/new/Screenshot%202024-07-03%20at%2018.52.27.png
+![coverage](https://github.com/keylad/gdsfactory/blob/main/pictures/coverage/new/Screenshot%202024-07-03%20at%2018.52.27.png)
 The overall coverage did not go up, however the coverage of the files that contain the improved functions did go up.
