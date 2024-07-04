@@ -11,64 +11,60 @@ Programming language: Python
 ### Coverage.py
 
 I then cloned the original repository:\
-  git clone https://github.com/gdsfactory/gdsfactory.git\
+git clone https://github.com/gdsfactory/gdsfactory.git\
 Then I changed the directory to /gdsfactory.\
-  cd gdsfactory\
+cd gdsfactory\
 Then I installed all the required dependencies and modules.\
-  pip install .\
-  pip install pytest_regressions\
-  pip install jsondiff\
-  pip install jsonschema\
+pip install .\
+pip install pytest_regressions\
+pip install jsondiff\
+pip install jsonschema\
 I used coverage.py to measure coverage after installing it and its requirements.\
 Finally, I ran coverage.py.\
-  coverage run -m pytest -s\
-  coverage report\
-  coverage html
+coverage run -m pytest -s\
+coverage report\
+coverage html
 
-[coverage pictures](https://github.com/keylad/gdsfactory/tree/main/pictures/coverage)
 
-### My own coverage tool
-
-#### def _parse_coordinate
-[link](https://github.com/keylad/gdsfactory/blob/main/pictures/parse_coordinate/Screenshot%202024-06-27%20at%2017.20.24.png)
-[link](https://github.com/keylad/gdsfactory/blob/main/pictures/parse_coordinate/Screenshot%202024-06-27%20at%2017.20.31.png)
-
-Using this example input, we get the following result:
-[link](https://github.com/keylad/gdsfactory/blob/main/pictures/parse_coordinate/Screenshot%202024-06-27%20at%2017.20.38.png)
-
-#### def get_min_sbend_size
-[link](https://github.com/keylad/gdsfactory/blob/main/pictures/get_min_bend_size/Screenshot%202024-06-27%20at%2017.20.50.png)
-[link](https://github.com/keylad/gdsfactory/blob/main/pictures/get_min_bend_size/Screenshot%202024-06-27%20at%2017.20.58.png)
-[link](https://github.com/keylad/gdsfactory/blob/main/pictures/get_min_bend_size/Screenshot%202024-06-27%20at%2017.21.04.png)
-Using this example we get, the following results:
-[link](https://github.com/keylad/gdsfactory/blob/main/pictures/get_min_bend_size/Screenshot%202024-06-27%20at%2017.21.11.png)
-
+As the coverage report is long, I only included the overall coverage result as well as the coverage result of the files that contain the functions for which I will improve the branch coverage.
+[coverage pictures]([https://github.com/keylad/gdsfactory/tree/main/pictures/coverage](https://github.com/keylad/gdsfactory/blob/main/pictures/coverage/old/Screenshot%202024-07-03%20at%2018.49.22.png))
+[coverage pictures](https://github.com/keylad/gdsfactory/blob/main/pictures/coverage/old/Screenshot%202024-07-03%20at%2018.50.05.png)
+[coverage pictures](https://github.com/keylad/gdsfactory/blob/main/pictures/coverage/old/Screenshot%202024-07-03%20at%2018.50.14.png)
 
 ## Coverage improvement
 
-#### test_parse_coordinate.py
-The tests do not directly cover the def _parse_coordinate, which is why we created an entirely new test that exclusively covers the function and its branches.
-[link](https://github.com/keylad/gdsfactory/blob/main/pictures/parse_coordinate/test/Screenshot%202024-06-27%20at%2017.23.11.png)
+### def parse_coordinate
+Identifying the requirements to be tested:
+[problem areas](https://github.com/keylad/gdsfactory/blob/main/pictures/Screenshot%202024-07-03%20at%2019.02.05.png)
 
-The original branch coverage of the function was as follows:
-[link](https://github.com/keylad/gdsfactory/tree/main/pictures/parse_coordinate/test/old%20coverage)
-The new branch coverage of the function after the new test is as follows:
-[link](https://github.com/keylad/gdsfactory/tree/main/pictures/new%20coverage)
+Here you can see the new test created for the parse_coordinate function since the original tests do not directly cover the function. The original coverage comes from other functions that use the parse_coordinate function. 
+[new tests](https://github.com/keylad/gdsfactory/blob/main/pictures/Screenshot%202024-07-03%20at%2018.58.29.png)
 
-The coverage is improved because before the introduction of this new test only the body of the elif branch was covered by tests and the other branches were not. This new test allows for the bodies of all the branches to be covered as it tests every possible case.
+This is the original coverage of the function:
+[original coverage](https://github.com/keylad/gdsfactory/blob/main/pictures/coverage/old/Screenshot%202024-07-03%20at%2018.49.44.png)
+
+This is the new coverage of the function:
+[new coverage](https://github.com/keylad/gdsfactory/blob/main/pictures/coverage/new/Screenshot%202024-07-03%20at%2018.51.07.png)
+
+The coverage is upped from 56% to 100% because before the introduction of this new test only the body of the elif branch was covered by tests and the other branches were not. This new test allows for the bodies of all the branches to be covered as it tests every possible case, including error cases.
 
 
-#### test_bend_s.py
-The tests do not directly cover the def get_min_sbend_size, which is why we created an entirely new test that exclusively covers the function and its branches.
-[link](https://github.com/keylad/gdsfactory/tree/main/pictures/get_min_bend_size/test)
+### def get_min_sbend_size
+Identifying the requirments to be tested:
+[problem areas](https://github.com/keylad/gdsfactory/blob/main/pictures/Screenshot%202024-07-03%20at%2019.02.42.png)
 
-The original branch coverage of the function was as follows:
-[link](https://github.com/keylad/gdsfactory/tree/main/pictures/get_min_bend_size/old%20coverage)
+Below is the new test created for the get_min_sbend_size function since the original tests also do not directly cover the fuction for the same reasons that were mentioned before.
+[new tests](https://github.com/keylad/gdsfactory/blob/main/pictures/Screenshot%202024-07-03%20at%2018.58.18.png)
 
-The new branch coverage of the function after the new test is as follows:
-[link](https://github.com/keylad/gdsfactory/tree/main/pictures/get_min_bend_size/new%20coverage)
+This is the original coverage of the function:
+[original coverage](https://github.com/keylad/gdsfactory/blob/main/pictures/coverage/old/Screenshot%202024-07-03%20at%2018.50.37.png) 
 
-The new test cases cover all the branches and conditions to make sure that each path, exception handling and different input scenarios, is executed at least once to improve the overall branch coverage. The for loop, however, is not covered by these test cases.
+This is the new coverage of the function:
+[new coverage](https://github.com/keylad/gdsfactory/blob/main/pictures/coverage/new/Screenshot%202024-07-03%20at%2018.51.34.png)
+
+The coverage is upped from 74% to 92%. It wasn't upped to 100% because the function also contains a for-loop that gives off a warning:
+[for loop](https://github.com/keylad/gdsfactory/blob/main/pictures/Screenshot%202024-07-04%20at%2011.58.36.png)
+Other than that the new test is applied to all prossible cases.
 
 ### Overall
 
