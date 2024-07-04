@@ -11,7 +11,7 @@ Programming language: Python
 ### Coverage.py
 
 I then cloned the original repository:\
-git clone https://github.com/gdsfactory/gdsfactory.git\
+git clone https://github.com/gdsfactory/gdsfactory.git \
 Then I changed the directory to /gdsfactory.\
 cd gdsfactory\
 Then I installed all the required dependencies and modules.\
@@ -32,6 +32,7 @@ As the coverage report is long, I only included the overall coverage result as w
 ![coverage pictures](https://github.com/keylad/gdsfactory/blob/main/pictures/coverage/old/Screenshot%202024-07-03%20at%2018.50.14.png)
 
 ## Coverage improvement
+[link to the commit](https://github.com/keylad/gdsfactory/blob/main/tests/added_test.py)
 
 ### def parse_coordinate
 Identifying the requirements to be tested:
@@ -67,9 +68,12 @@ The coverage is upped from 74% to 92%. It wasn't upped to 100% because the funct
 Other than that the new test is applied to all prossible cases.
 
 ### Overall
+These are the old coverage results:
+![coverage](https://github.com/keylad/gdsfactory/blob/main/pictures/coverage/old/Screenshot%202024-07-03%20at%2018.49.22.png)
+![coverage](https://github.com/keylad/gdsfactory/blob/main/pictures/coverage/old/Screenshot%202024-07-03%20at%2018.50.05.png)
+![coverage](https://github.com/keylad/gdsfactory/blob/main/pictures/coverage/old/Screenshot%202024-07-03%20at%2018.50.14.png)
 
-<Provide a screenshot of the old coverage results by running an existing tool (the same as you already showed above)>
-
-<Provide a screenshot of the new coverage results by running the existing tool using all test modifications made by the group>
-
-## Statement of individual contributions
+![coverage](https://github.com/keylad/gdsfactory/blob/main/pictures/coverage/new/Screenshot%202024-07-03%20at%2018.50.50.png)
+![coverage](https://github.com/keylad/gdsfactory/blob/main/pictures/coverage/new/Screenshot%202024-07-03%20at%2018.51.55.png)
+![coverage](https://github.com/keylad/gdsfactory/blob/main/pictures/coverage/new/Screenshot%202024-07-03%20at%2018.52.27.png
+The overall coverage did not go up, however the coverage of the files that contain the improved functions did go up.
